@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LadderAppApp: App {
+    @StateObject private var coreDataManager: CoreDataManager = .shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, coreDataManager.getContainer().viewContext)
         }
     }
 }

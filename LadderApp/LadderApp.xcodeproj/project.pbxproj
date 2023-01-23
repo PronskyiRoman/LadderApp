@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6762EE297EB2740024F03A /* LadderAppApp.swift */; };
-		CF6762F1297EB2740024F03A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6762F0297EB2740024F03A /* ContentView.swift */; };
 		CF6762F3297EB2790024F03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6762F2297EB2790024F03A /* Assets.xcassets */; };
 		CF6762F7297EB2790024F03A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6762F6297EB2790024F03A /* Preview Assets.xcassets */; };
+		CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676306297EC2F30024F03A /* CoreDataManager.swift */; };
+		CF67630F297EC2F30024F03A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676308297EC2F30024F03A /* ContentView.swift */; };
+		CF676311297EC2F30024F03A /* LadderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF6762EB297EB2740024F03A /* LadderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6762EE297EB2740024F03A /* LadderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAppApp.swift; sourceTree = "<group>"; };
-		CF6762F0297EB2740024F03A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF6762F2297EB2790024F03A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF6762F4297EB2790024F03A /* LadderApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LadderApp.entitlements; sourceTree = "<group>"; };
 		CF6762F6297EB2790024F03A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF676306297EC2F30024F03A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CF676308297EC2F30024F03A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LadderDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +57,11 @@
 			isa = PBXGroup;
 			children = (
 				CF6762EE297EB2740024F03A /* LadderAppApp.swift */,
-				CF6762F0297EB2740024F03A /* ContentView.swift */,
 				CF6762F2297EB2790024F03A /* Assets.xcassets */,
 				CF6762F4297EB2790024F03A /* LadderApp.entitlements */,
+				CF676307297EC2F30024F03A /* Flows */,
+				CF676305297EC2F30024F03A /* Managers */,
+				CF67630B297EC2F30024F03A /* CoreData */,
 				CF6762F5297EB2790024F03A /* Preview Content */,
 			);
 			path = LadderApp;
@@ -67,6 +73,30 @@
 				CF6762F6297EB2790024F03A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF676305297EC2F30024F03A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CF676306297EC2F30024F03A /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CF676307297EC2F30024F03A /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				CF676308297EC2F30024F03A /* ContentView.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		CF67630B297EC2F30024F03A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6762F1297EB2740024F03A /* ContentView.swift in Sources */,
+				CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */,
+				CF676311297EC2F30024F03A /* LadderDataModel.xcdatamodeld in Sources */,
+				CF67630F297EC2F30024F03A /* ContentView.swift in Sources */,
 				CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +386,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */,
+			);
+			currentVersion = CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */;
+			path = LadderDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CF6762E3297EB2740024F03A /* Project object */;
 }
