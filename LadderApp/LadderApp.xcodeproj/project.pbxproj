@@ -12,7 +12,7 @@
 		CF6762F7297EB2790024F03A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6762F6297EB2790024F03A /* Preview Assets.xcassets */; };
 		CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676306297EC2F30024F03A /* CoreDataManager.swift */; };
 		CF67630F297EC2F30024F03A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676308297EC2F30024F03A /* ContentView.swift */; };
-		CF676311297EC2F30024F03A /* LadderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */; };
+		CF676314297ED7710024F03A /* LadderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF676312297ED7710024F03A /* LadderDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		CF6762F6297EB2790024F03A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF676306297EC2F30024F03A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CF676308297EC2F30024F03A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LadderDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CF676313297ED7710024F03A /* LadderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LadderDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 		CF67630B297EC2F30024F03A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */,
+				CF676312297ED7710024F03A /* LadderDataModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -170,9 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */,
-				CF676311297EC2F30024F03A /* LadderDataModel.xcdatamodeld in Sources */,
 				CF67630F297EC2F30024F03A /* ContentView.swift in Sources */,
 				CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */,
+				CF676314297ED7710024F03A /* LadderDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -319,7 +319,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RomanProskiy.LadderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,7 +351,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -357,7 +359,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RomanProskiy.LadderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,12 +392,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CF67630C297EC2F30024F03A /* LadderDataModel.xcdatamodeld */ = {
+		CF676312297ED7710024F03A /* LadderDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */,
+				CF676313297ED7710024F03A /* LadderDataModel.xcdatamodel */,
 			);
-			currentVersion = CF67630D297EC2F30024F03A /* LadderDataModel.xcdatamodel */;
+			currentVersion = CF676313297ED7710024F03A /* LadderDataModel.xcdatamodel */;
 			path = LadderDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

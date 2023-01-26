@@ -14,7 +14,7 @@ struct LadderAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, coreDataManager.getContainer().viewContext)
+                .environment(\.managedObjectContext, coreDataManager.context)
         }
     }
 }

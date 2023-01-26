@@ -23,6 +23,8 @@ final class CoreDataManager: ObservableObject {
             guard let error else { return }
             debugPrint("Core Data failed to load: \(error.localizedDescription)")
         }
+        context.automaticallyMergesChangesFromParent = true
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
     // access to class
@@ -31,7 +33,7 @@ final class CoreDataManager: ObservableObject {
     }()
     
     // current container
-    func getContainer() -> NSPersistentContainer {
-        container
+    var context: NSManagedObjectContext {
+        container.viewContext
     }
 }
