@@ -7,20 +7,49 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView<Model>: View, ContentViewProtocol where Model: AnyCoordinatable {
+    // view Model
+    var viewModel: StateObject<ContentViewModel>
+    
+    // Content coordinator
+    @StateObject var coordinator: Model
+    
+    // init
+    init(viewModel: ContentViewModel, coordinator: Model) {
+        self.viewModel = StateObject.init(wrappedValue: viewModel)
+        _coordinator = StateObject.init(wrappedValue: coordinator)
+    }
+    
+    // MARK: Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        buildBody()
+    }
+    
+    // MARK: Builders
+    @ViewBuilder func buildBody() -> some View {
+        NavigationStack(path: $coordinator.path) {
+            AnyView(buildIosBody())
+                .navigationDestination(for: Model.CoordinatorPath.self) { path in
+                    path.destination
+                }
         }
-        .padding()
+    }
+    
+    @ViewBuilder func buildIosBody() -> any View {
+        ZStack {
+            Color.brown
+            VStack {
+                Button("tap") {
+                    viewModel.wrappedValue.coordinator.push(path: .empty)
+                }
+                .padding()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: .init(), coordinator: Coordinator.shared)
     }
 }

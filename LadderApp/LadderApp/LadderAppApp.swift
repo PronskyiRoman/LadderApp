@@ -13,7 +13,8 @@ struct LadderAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let contentViewModel = ContentViewModel.init()
+            ContentView(viewModel: contentViewModel, coordinator: contentViewModel.coordinator)
                 .environment(\.managedObjectContext, coreDataManager.context)
         }
     }
