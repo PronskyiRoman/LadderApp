@@ -13,12 +13,14 @@
 		CF4373812982854900927A89 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4373802982854900927A89 /* ContentViewModel.swift */; };
 		CF4373832982919600927A89 /* AnyCoordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4373822982919600927A89 /* AnyCoordinatable.swift */; };
 		CF437385298291C600927A89 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF437384298291C600927A89 /* PathType.swift */; };
+		CF4373882982AE2400927A89 /* CoreDataRequestsServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4373872982AE2400927A89 /* CoreDataRequestsServise.swift */; };
 		CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6762EE297EB2740024F03A /* LadderAppApp.swift */; };
 		CF6762F3297EB2790024F03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6762F2297EB2790024F03A /* Assets.xcassets */; };
 		CF6762F7297EB2790024F03A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6762F6297EB2790024F03A /* Preview Assets.xcassets */; };
 		CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676306297EC2F30024F03A /* CoreDataManager.swift */; };
 		CF67630F297EC2F30024F03A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF676308297EC2F30024F03A /* ContentView.swift */; };
 		CF676314297ED7710024F03A /* LadderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF676312297ED7710024F03A /* LadderDataModel.xcdatamodeld */; };
+		CFA7D16429895361001969E3 /* CoreDataSaveServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D16329895361001969E3 /* CoreDataSaveServise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		CF4373822982919600927A89 /* AnyCoordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinatable.swift; sourceTree = "<group>"; };
 		CF437384298291C600927A89 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
 		CF4373862982ACD700927A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CF4373872982AE2400927A89 /* CoreDataRequestsServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRequestsServise.swift; sourceTree = "<group>"; };
 		CF6762EB297EB2740024F03A /* LadderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6762EE297EB2740024F03A /* LadderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAppApp.swift; sourceTree = "<group>"; };
 		CF6762F2297EB2790024F03A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		CF676306297EC2F30024F03A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CF676308297EC2F30024F03A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF676313297ED7710024F03A /* LadderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LadderDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CFA7D16329895361001969E3 /* CoreDataSaveServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSaveServise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				CF676306297EC2F30024F03A /* CoreDataManager.swift */,
+				CF4373872982AE2400927A89 /* CoreDataRequestsServise.swift */,
+				CFA7D16329895361001969E3 /* CoreDataSaveServise.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				CF43737B2982807400927A89 /* Coordinator.swift in Sources */,
 				CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */,
 				CF4373832982919600927A89 /* AnyCoordinatable.swift in Sources */,
+				CFA7D16429895361001969E3 /* CoreDataSaveServise.swift in Sources */,
 				CF43737D2982808100927A89 /* Path.swift in Sources */,
+				CF4373882982AE2400927A89 /* CoreDataRequestsServise.swift in Sources */,
 				CF676314297ED7710024F03A /* LadderDataModel.xcdatamodeld in Sources */,
 				CF43737F2982825500927A89 /* ContentViewProtocol.swift in Sources */,
 			);
