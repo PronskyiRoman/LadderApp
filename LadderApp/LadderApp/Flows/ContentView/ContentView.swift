@@ -36,15 +36,7 @@ struct ContentView<Model>: View, ContentViewProtocol where Model: AnyCoordinatab
     }
     
     @ViewBuilder func buildIosBody() -> any View {
-        ZStack {
-            Color.brown
-            VStack {
-                Button("tap") {
-                    viewModel.wrappedValue.coordinator.push(path: .empty)
-                }
-                .padding()
-            }
-        }
+        HomePageView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator))
     }
 }
 

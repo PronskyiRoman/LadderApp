@@ -9,10 +9,14 @@ import SwiftUI
 
 enum Path: PathType {
     case empty
+    case newGame
+    case scoreTable
     
     var destination: AnyView {
         switch self {
         case .empty: return AnyView(Color.pink)
+        case .newGame: return AnyView(Color.red)
+        case .scoreTable: return AnyView(Color.blue)
         }
     }
 }
