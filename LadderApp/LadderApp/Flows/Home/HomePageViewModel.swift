@@ -16,7 +16,7 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     // ui
     var buttonColor: Color = ColorConstants.button
     var backgroundColor: Color = ColorConstants.background
-    var buttonFont: Font = FontConstants.button
+    var buttonFont: Font = FontConstants.title
     
     // coordinator
     var coordinator: Coordinator
@@ -28,7 +28,7 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     
     // navigation
     func pushNewGame() {
-        coordinator.push(path: .newGame)
+        coordinator.push(path: .newGame(coordinator))
     }
     
     func pushScoreTable() {

@@ -8,5 +8,6 @@
 import SwiftUI
 
 struct FontConstants {
-    static let button: Font = .title
+    static let title: Font = .title
+    static let erroe: Font = .callout
 }
