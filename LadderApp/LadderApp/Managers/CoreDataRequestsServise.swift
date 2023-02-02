@@ -25,9 +25,9 @@ final class CoreDataRequestsServise: CoreDataRequestsServiseProtocol {
     }
     
     func allMembers() -> [String] {
-        let request = NSFetchRequest<Player>()
+        let request = NSFetchRequest<Player>.init(entityName: "Player")
+
         let players = try? context.fetch(request)
-        
         return players?.compactMap({ $0.name }) ?? []
     }
     

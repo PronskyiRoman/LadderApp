@@ -32,6 +32,10 @@
 		CFA7D17D29897B4C001969E3 /* NewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D17C29897B4C001969E3 /* NewGameViewModel.swift */; };
 		CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */; };
 		CFA7D18129897B65001969E3 /* NewGameViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */; };
+		CFB99385298BA42000E9CB72 /* SelectPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */; };
+		CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */; };
+		CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */; };
+		CFB9938B298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		CFA7D17C29897B4C001969E3 /* NewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewModel.swift; sourceTree = "<group>"; };
 		CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewProtocol.swift; sourceTree = "<group>"; };
 		CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewModelProtocol.swift; sourceTree = "<group>"; };
+		CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersView.swift; sourceTree = "<group>"; };
+		CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModel.swift; sourceTree = "<group>"; };
+		CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewProtocol.swift; sourceTree = "<group>"; };
+		CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 				CFA7D16829897079001969E3 /* ContentView */,
 				CFA7D16B29897095001969E3 /* Home */,
 				CFA7D17929897B1F001969E3 /* NewGame */,
+				CFB99383298BA3F800E9CB72 /* SelectPlayers */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -196,6 +205,17 @@
 				CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */,
 			);
 			path = NewGame;
+			sourceTree = "<group>";
+		};
+		CFB99383298BA3F800E9CB72 /* SelectPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */,
+				CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */,
+				CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */,
+				CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */,
+			);
+			path = SelectPlayers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA7D17829897A1E001969E3 /* FontConstants.swift in Sources */,
+				CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */,
 				CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */,
+				CFB9938B298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift in Sources */,
 				CF4373812982854900927A89 /* ContentViewModel.swift in Sources */,
 				CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */,
 				CF437385298291C600927A89 /* PathType.swift in Sources */,
 				CFA7D16F298970F9001969E3 /* HomePageViewModelProtocol.swift in Sources */,
+				CFB99385298BA42000E9CB72 /* SelectPlayersView.swift in Sources */,
 				CF67630F297EC2F30024F03A /* ContentView.swift in Sources */,
 				CFA7D16D298970EB001969E3 /* HomePageViewProtocol.swift in Sources */,
 				CFA7D18129897B65001969E3 /* NewGameViewModelProtocol.swift in Sources */,
@@ -281,6 +304,7 @@
 				CF43737B2982807400927A89 /* Coordinator.swift in Sources */,
 				CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */,
 				CFA7D16A29897090001969E3 /* HomePageViewModel.swift in Sources */,
+				CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */,
 				CF4373832982919600927A89 /* AnyCoordinatable.swift in Sources */,
 				CFA7D16429895361001969E3 /* CoreDataSaveServise.swift in Sources */,
 				CF43737D2982808100927A89 /* Path.swift in Sources */,

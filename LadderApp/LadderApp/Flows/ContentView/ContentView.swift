@@ -14,6 +14,9 @@ struct ContentView<Model>: View, ContentViewProtocol where Model: AnyCoordinatab
     // Content coordinator
     @StateObject var coordinator: Model
     
+    // context
+    @Environment(\.managedObjectContext) var context
+    
     // init
     init(viewModel: ContentViewModel, coordinator: Model) {
         self.viewModel = StateObject.init(wrappedValue: viewModel)
@@ -36,7 +39,8 @@ struct ContentView<Model>: View, ContentViewProtocol where Model: AnyCoordinatab
     }
     
     @ViewBuilder func buildIosBody() -> any View {
-        HomePageView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator))
+        HomePageView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator,
+                                      context: context))
     }
 }
 

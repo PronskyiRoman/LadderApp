@@ -9,13 +9,14 @@ import SwiftUI
 
 struct NewGameView: View, NewGameViewProtocol {
     var viewModel: StateObject<NewGameViewModel>
+    @Environment(\.managedObjectContext) var context
     
     init(viewModel: NewGameViewModel) {
         self.viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        buildIosBody()
+        buildIosBody(context: context)
     }
 }
 
