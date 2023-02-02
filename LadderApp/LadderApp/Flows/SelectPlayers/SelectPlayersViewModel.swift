@@ -45,7 +45,7 @@ final class SelectPlayersViewModel: ObservableObject, SelectPlayersViewModelProt
     // all players
     @Published private var chosenFirstPlayer: String = ""
     @Published private var chosenSecondPlayer: String = ""
-    @Published var allPlayers: [String] = ["Jack", "Merry", "Garry"]
+    @Published var allPlayers: [String] = []
     
     // combine
     var cancellable: Set<AnyCancellable> = .init()
@@ -88,6 +88,12 @@ final class SelectPlayersViewModel: ObservableObject, SelectPlayersViewModelProt
             self.chosenSecondPlayer = name
             self.checkPlayers(isFirst: false, player: name)
             self.isStartDisabled = self.isStartAllowed()
+        }).store(in: &cancellable)
+        
+        $allPlayers.dropFirst().sink(receiveValue: { [weak self] value in
+            guard value.isEmpty else { return }
+            self?.isFirstPlayerNew = true
+            self?.isSecondPlayerNew = true
         }).store(in: &cancellable)
     }
     
@@ -152,15 +158,7 @@ final class SelectPlayersViewModel: ObservableObject, SelectPlayersViewModelProt
     }
     
     func startAction() {
-        savePlayer()
         isSheetPresentedBinding.toggle()
-    }
-    
-    private func savePlayer() {
-        if !chosenFirstPlayer.isEmpty && !chosenSecondPlayer.isEmpty {
-            if !allPlayers.contains(chosenFirstPlayer) { coreDataSave.saveNewTeamMember(chosenFirstPlayer) }
-            if !allPlayers.contains(chosenSecondPlayer) { coreDataSave.saveNewTeamMember(chosenSecondPlayer) }
-        }
     }
     
     private func checkPlayers(isFirst: Bool, player: String) {

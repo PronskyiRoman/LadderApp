@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 protocol CoreDataSaveServiseProtocol {
-    func saveNewTeamMember(_ name: String)
     func saveGame(player: (name: String, score: Int), opponent: (name: String, score: Int))
 }
 
@@ -18,14 +17,6 @@ final class CoreDataSaveServise: CoreDataSaveServiseProtocol {
     
     init(context: NSManagedObjectContext) {
         self.context = context
-    }
-    
-    func saveNewTeamMember(_ name: String) {
-        let player = Player(context: context)
-        player.name = name
-        player.score = nil
-        
-        try? context.save()
     }
     
     func saveGame(player: (name: String, score: Int), opponent: (name: String, score: Int)) {
