@@ -32,6 +32,7 @@
 		CFA7D17D29897B4C001969E3 /* NewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D17C29897B4C001969E3 /* NewGameViewModel.swift */; };
 		CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */; };
 		CFA7D18129897B65001969E3 /* NewGameViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */; };
+		CFAD6108298C5240009A5B64 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */; };
 		CFB99385298BA42000E9CB72 /* SelectPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */; };
 		CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */; };
 		CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */; };
@@ -72,6 +73,7 @@
 		CFA7D17C29897B4C001969E3 /* NewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewModel.swift; sourceTree = "<group>"; };
 		CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewProtocol.swift; sourceTree = "<group>"; };
 		CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewModelProtocol.swift; sourceTree = "<group>"; };
+		CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersView.swift; sourceTree = "<group>"; };
 		CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModel.swift; sourceTree = "<group>"; };
 		CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewProtocol.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		CF676307297EC2F30024F03A /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CFAD6106298C5228009A5B64 /* LaunchScreen */,
 				CFA7D16829897079001969E3 /* ContentView */,
 				CFA7D16B29897095001969E3 /* Home */,
 				CFA7D17929897B1F001969E3 /* NewGame */,
@@ -217,6 +220,14 @@
 				CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */,
 			);
 			path = NewGame;
+			sourceTree = "<group>";
+		};
+		CFAD6106298C5228009A5B64 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		CFB99383298BA3F800E9CB72 /* SelectPlayers */ = {
@@ -307,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAD6108298C5240009A5B64 /* Launch Screen.storyboard in Resources */,
 				CF6762F7297EB2790024F03A /* Preview Assets.xcassets in Resources */,
 				CF6762F3297EB2790024F03A /* Assets.xcassets in Resources */,
 			);
@@ -486,6 +498,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
@@ -494,7 +507,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RomanProskiy.LadderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -527,6 +540,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
@@ -535,7 +549,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RomanProskiy.LadderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
