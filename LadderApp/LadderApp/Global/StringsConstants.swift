@@ -19,4 +19,10 @@ struct StringsConstants {
     static let oldPlayer = "Old"
     static let newPlayer = "New"
     static let errorPlayerExistOrChosen = "Player already exist or chosen"
+    static let endGameTitile = "End \nGame"
+    static let gameScoreTitle = "Game \nScore"
+    static let scoreSeparator = " : "
+    static let save = "Save"
+    static let leave = "leave"
+    static let errorGameHasNotBeenSaved = "The game has not been saved. Do you want save the game?"
 }

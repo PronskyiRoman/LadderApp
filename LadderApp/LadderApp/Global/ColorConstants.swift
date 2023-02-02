@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorConstants {
-    static let background: Color = Color.black.opacity(0.85)
+    static let background: Color = Color("BgColor")
     static let text: Color = .white
     static let button: Color = .brown
     static let disabled: Color = .gray.opacity(0.6)

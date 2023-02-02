@@ -159,7 +159,7 @@ final class SelectPlayersViewModel: ObservableObject, SelectPlayersViewModelProt
     private func savePlayer() {
         if !chosenFirstPlayer.isEmpty && !chosenSecondPlayer.isEmpty {
             if !allPlayers.contains(chosenFirstPlayer) { coreDataSave.saveNewTeamMember(chosenFirstPlayer) }
-            if !allPlayers.contains(chosenSecondPlayer) { coreDataSave.saveNewTeamMember(chosenFirstPlayer) }
+            if !allPlayers.contains(chosenSecondPlayer) { coreDataSave.saveNewTeamMember(chosenSecondPlayer) }
         }
     }
     
