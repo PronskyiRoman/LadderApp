@@ -22,6 +22,10 @@ final class Coordinator: AnyCoordinatable {
     func popToRoot() {
         path = NavigationPath()
     }
+    
+    func popLast() {
+        !path.isEmpty ? path.removeLast() : ()
+    }
 }
 
 // MARK: Hashable
