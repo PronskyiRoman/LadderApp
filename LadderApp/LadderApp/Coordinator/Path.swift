@@ -16,7 +16,7 @@ enum Path: PathType {
         switch self {
         case .empty: return AnyView(Color.pink)
         case .newGame(let coordinator): return AnyView(NewGameView(viewModel: .init(coordinator: coordinator)))
-        case .scoreTable: return AnyView(Color.blue)
+        case .scoreTable: return AnyView(ScoreView(viewModel: .init()))
         }
     }
 }

@@ -9,14 +9,22 @@ import SwiftUI
 import CoreData
 
 struct SelectPlayersView: View, SelectPlayersViewProtocol {
+    // view Model
     var viewModel: StateObject<SelectPlayersViewModel>
     
+    // init
     init(viewModel: SelectPlayersViewModel) {
         self.viewModel = StateObject(wrappedValue: viewModel)
     }
     
+    // MARK: Body
     var body: some View {
         buildIosBody()
+    }
+    
+    // MARK: Builders
+    @ViewBuilder private func buildIosBody() -> some View {
+        buildBody()
     }
 }
 

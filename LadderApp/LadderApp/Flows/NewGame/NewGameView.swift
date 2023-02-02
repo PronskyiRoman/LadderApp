@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct NewGameView: View, NewGameViewProtocol {
+    // view Model
     var viewModel: StateObject<NewGameViewModel>
+    
+    // context
     @Environment(\.managedObjectContext) var context
     
+    // init
     init(viewModel: NewGameViewModel) {
         self.viewModel = StateObject(wrappedValue: viewModel)
     }
     
+    // MARK: Body
     var body: some View {
         buildIosBody(context: context)
+    }
+    
+    // MARK: Builders
+    @ViewBuilder private func buildIosBody(context: NSManagedObjectContext) -> some View {
+        buildBody(context: context)
     }
 }
 

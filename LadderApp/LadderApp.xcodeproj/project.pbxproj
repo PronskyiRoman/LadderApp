@@ -36,6 +36,10 @@
 		CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */; };
 		CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */; };
 		CFB9938B298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */; };
+		CFB9938E298BF21700E9CB72 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9938D298BF21700E9CB72 /* ScoreView.swift */; };
+		CFB99390298BF22200E9CB72 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9938F298BF22200E9CB72 /* ScoreViewModel.swift */; };
+		CFB99392298BF22E00E9CB72 /* ScoreViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99391298BF22E00E9CB72 /* ScoreViewProtocol.swift */; };
+		CFB99394298BF23D00E9CB72 /* ScoreViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99393298BF23D00E9CB72 /* ScoreViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +75,10 @@
 		CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModel.swift; sourceTree = "<group>"; };
 		CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewProtocol.swift; sourceTree = "<group>"; };
 		CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModelProtocol.swift; sourceTree = "<group>"; };
+		CFB9938D298BF21700E9CB72 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		CFB9938F298BF22200E9CB72 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		CFB99391298BF22E00E9CB72 /* ScoreViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewProtocol.swift; sourceTree = "<group>"; };
+		CFB99393298BF23D00E9CB72 /* ScoreViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,7 @@
 				CFA7D16B29897095001969E3 /* Home */,
 				CFA7D17929897B1F001969E3 /* NewGame */,
 				CFB99383298BA3F800E9CB72 /* SelectPlayers */,
+				CFB9938C298BF19E00E9CB72 /* Score */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -216,6 +225,17 @@
 				CFB9938A298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift */,
 			);
 			path = SelectPlayers;
+			sourceTree = "<group>";
+		};
+		CFB9938C298BF19E00E9CB72 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				CFB9938D298BF21700E9CB72 /* ScoreView.swift */,
+				CFB9938F298BF22200E9CB72 /* ScoreViewModel.swift */,
+				CFB99391298BF22E00E9CB72 /* ScoreViewProtocol.swift */,
+				CFB99393298BF23D00E9CB72 /* ScoreViewModelProtocol.swift */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +311,10 @@
 				CFA7D17829897A1E001969E3 /* FontConstants.swift in Sources */,
 				CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */,
 				CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */,
+				CFB99392298BF22E00E9CB72 /* ScoreViewProtocol.swift in Sources */,
 				CFB9938B298BA47100E9CB72 /* SelectPlayersViewModelProtocol.swift in Sources */,
 				CF4373812982854900927A89 /* ContentViewModel.swift in Sources */,
+				CFB99390298BF22200E9CB72 /* ScoreViewModel.swift in Sources */,
 				CF67630E297EC2F30024F03A /* CoreDataManager.swift in Sources */,
 				CF437385298291C600927A89 /* PathType.swift in Sources */,
 				CFA7D16F298970F9001969E3 /* HomePageViewModelProtocol.swift in Sources */,
@@ -308,11 +330,13 @@
 				CF4373832982919600927A89 /* AnyCoordinatable.swift in Sources */,
 				CFA7D16429895361001969E3 /* CoreDataSaveServise.swift in Sources */,
 				CF43737D2982808100927A89 /* Path.swift in Sources */,
+				CFB99394298BF23D00E9CB72 /* ScoreViewModelProtocol.swift in Sources */,
 				CFA7D1742989783F001969E3 /* StringsConstants.swift in Sources */,
 				CF4373882982AE2400927A89 /* CoreDataRequestsServise.swift in Sources */,
 				CF676314297ED7710024F03A /* LadderDataModel.xcdatamodeld in Sources */,
 				CFA7D17629897985001969E3 /* ColorConstants.swift in Sources */,
 				CFA7D17129897106001969E3 /* HomePageView.swift in Sources */,
+				CFB9938E298BF21700E9CB72 /* ScoreView.swift in Sources */,
 				CFA7D17D29897B4C001969E3 /* NewGameViewModel.swift in Sources */,
 				CF43737F2982825500927A89 /* ContentViewProtocol.swift in Sources */,
 			);

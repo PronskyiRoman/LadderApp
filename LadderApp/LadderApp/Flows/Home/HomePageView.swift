@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct HomePageView: View, HomePageViewProtocol {
+    // view Model
     var viewModel: StateObject<HomePageViewModel>
     
+    // init
     init(viewModel: HomePageViewModel) {
         self.viewModel = StateObject(wrappedValue: viewModel)
     }
     
+    // MARK: Body
     var body: some View {
         buildIosBody()
     }
+    
+    // MARK: Builders
 }
 
 struct HomePageView_Previews: PreviewProvider {

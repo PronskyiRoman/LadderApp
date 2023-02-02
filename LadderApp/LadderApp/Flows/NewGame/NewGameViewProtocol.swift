@@ -12,12 +12,12 @@ protocol NewGameViewProtocol {
     associatedtype ViewModel: NewGameViewModelProtocol
     var viewModel: StateObject<ViewModel> { get set }
     
-    func buildIosBody(context: NSManagedObjectContext) -> AnyView
+    func buildBody(context: NSManagedObjectContext) -> AnyView
 }
 
 extension NewGameViewProtocol {
-    @ViewBuilder func buildIosBody(context: NSManagedObjectContext) -> AnyView {
-        AnyView(buildBody(context: context)
+    @ViewBuilder func buildBody(context: NSManagedObjectContext) -> AnyView {
+        AnyView(buildScreenBody(context: context)
             .sheet(isPresented: viewModel.wrappedValue.isSheetPresentedBinding,
                    onDismiss: viewModel.wrappedValue.checkIsPlayersSelected) {
             SelectPlayersView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator,
@@ -31,7 +31,7 @@ extension NewGameViewProtocol {
             }, message: { Text(viewModel.wrappedValue.errorGameHasNotBeenSaved) }))
     }
     
-    @ViewBuilder private func buildBody(context: NSManagedObjectContext) -> some View {
+    @ViewBuilder private func buildScreenBody(context: NSManagedObjectContext) -> some View {
         GeometryReader { view in
             ZStack(alignment: .topLeading) {
                 VStack(spacing: .zero) {
