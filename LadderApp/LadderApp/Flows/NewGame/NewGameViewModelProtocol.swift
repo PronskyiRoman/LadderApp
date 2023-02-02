@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 protocol NewGameViewModelProtocol: ObservableObject {
     var isSheetPresented: Bool { get set }
@@ -45,11 +46,14 @@ protocol NewGameViewModelProtocol: ObservableObject {
     // navigation
     var coordinator: Coordinator { get set }
     
+    // services
+    var coreDataSave: CoreDataSaveServise? { get set }
+    
     // func
     func checkIsPlayersSelected()
     func updateScore(for player: String)
     func firstLetter(of name: String) -> String
-    func endGame()
+    func endGame(context: NSManagedObjectContext)
     func leave()
     func backAction()
 }

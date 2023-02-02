@@ -17,7 +17,7 @@ protocol NewGameViewProtocol {
 
 extension NewGameViewProtocol {
     @ViewBuilder func buildIosBody(context: NSManagedObjectContext) -> AnyView {
-        AnyView(buildBody()
+        AnyView(buildBody(context: context)
             .sheet(isPresented: viewModel.wrappedValue.isSheetPresentedBinding,
                    onDismiss: viewModel.wrappedValue.checkIsPlayersSelected) {
             SelectPlayersView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator,
@@ -26,12 +26,12 @@ extension NewGameViewProtocol {
                                                firstPlayerName: viewModel.wrappedValue.firstPlayerName,
                                                secondPlayerName: viewModel.wrappedValue.secondPlayerName))}
             .confirmationDialog("", isPresented: viewModel.wrappedValue.isBackSheetPresentedBinding, actions: {
-                Button(viewModel.wrappedValue.saveTitle) { viewModel.wrappedValue.endGame() }
+                Button(viewModel.wrappedValue.saveTitle) { viewModel.wrappedValue.endGame(context: context) }
                 Button(viewModel.wrappedValue.leaveTitle) { viewModel.wrappedValue.leave() }
             }, message: { Text(viewModel.wrappedValue.errorGameHasNotBeenSaved) }))
     }
     
-    @ViewBuilder private func buildBody() -> some View {
+    @ViewBuilder private func buildBody(context: NSManagedObjectContext) -> some View {
         GeometryReader { view in
             ZStack(alignment: .topLeading) {
                 VStack(spacing: .zero) {
@@ -44,7 +44,7 @@ extension NewGameViewProtocol {
                         Spacer()
                         buildScore()
                         Spacer()
-                        buildEndGameButton()
+                        buildEndGameButton(context: context)
                     }
                     .padding(.horizontal)
                     
@@ -75,9 +75,9 @@ extension NewGameViewProtocol {
         }
     }
     
-    @ViewBuilder private func buildEndGameButton() -> some View {
+    @ViewBuilder private func buildEndGameButton(context: NSManagedObjectContext) -> some View {
         Button {
-            viewModel.wrappedValue.endGame()
+            viewModel.wrappedValue.endGame(context: context)
         } label: {
             Text(viewModel.wrappedValue.endGameButtonTitle)
                 .foregroundColor(ColorConstants.button)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
     // screen should be presented on appear
@@ -39,6 +40,9 @@ final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
     
     // navigation
     var coordinator: Coordinator
+    
+    // servises
+    var coreDataSave: CoreDataSaveServise?
     
     init(coordinator: Coordinator) {
         self.isSheetPresentedBinding = .constant(true)
@@ -116,8 +120,11 @@ final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
         }
     }
     
-    func endGame() {
-        //
+    func endGame(context: NSManagedObjectContext) {
+        coreDataSave = .init(context: context)
+        coreDataSave?.saveGame(playerName1: firstPlayerNameString, player1Score: firstPlayerScore,
+                              playerName2: secondPlayerNameString, player2Score: secondPlayerScore)
+        coordinator.popLast()
     }
     
     func leave() {
