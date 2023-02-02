@@ -21,8 +21,8 @@ extension ScoreViewProtocol {
                 .ignoresSafeArea()
             VStack(spacing: .zero) {
                 buildHeader()
-                List(1..<100) { index in
-                    buildCell("water.waves.and.arrow.upwater.waves.and.arrow.up", winRate: index, gamesPlayed: 300)
+                List(viewModel.wrappedValue.players.sorted(by: { $0.gamesPlayed > $1.gamesPlayed })) { player in
+                    buildCell(player.name, winRate: player.winRate, gamesPlayed: player.gamesPlayed)
                 }
                 .listStyle(.grouped)
                 .scrollContentBackground(.hidden)

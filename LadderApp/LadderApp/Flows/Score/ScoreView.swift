@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ScoreView: View, ScoreViewProtocol {
     // view Model
@@ -29,6 +30,6 @@ struct ScoreView: View, ScoreViewProtocol {
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(viewModel: .init())
+        ScoreView(viewModel: .init(context: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)))
     }
 }

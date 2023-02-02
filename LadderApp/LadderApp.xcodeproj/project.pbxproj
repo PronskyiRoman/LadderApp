@@ -40,6 +40,7 @@
 		CFB99390298BF22200E9CB72 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9938F298BF22200E9CB72 /* ScoreViewModel.swift */; };
 		CFB99392298BF22E00E9CB72 /* ScoreViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99391298BF22E00E9CB72 /* ScoreViewProtocol.swift */; };
 		CFB99394298BF23D00E9CB72 /* ScoreViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99393298BF23D00E9CB72 /* ScoreViewModelProtocol.swift */; };
+		CFB99397298C0DA600E9CB72 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99396298C0DA600E9CB72 /* PlayerScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		CFB9938F298BF22200E9CB72 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		CFB99391298BF22E00E9CB72 /* ScoreViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewProtocol.swift; sourceTree = "<group>"; };
 		CFB99393298BF23D00E9CB72 /* ScoreViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModelProtocol.swift; sourceTree = "<group>"; };
+		CFB99396298C0DA600E9CB72 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +128,9 @@
 				CF6762EE297EB2740024F03A /* LadderAppApp.swift */,
 				CF6762F2297EB2790024F03A /* Assets.xcassets */,
 				CF6762F4297EB2790024F03A /* LadderApp.entitlements */,
-				CFA7D17229897825001969E3 /* Global */,
 				CF676307297EC2F30024F03A /* Flows */,
+				CFA7D17229897825001969E3 /* Global */,
+				CFB99395298C0D8C00E9CB72 /* Models */,
 				CF4373792982805000927A89 /* Coordinator */,
 				CF676305297EC2F30024F03A /* Managers */,
 				CF67630B297EC2F30024F03A /* CoreData */,
@@ -238,6 +241,14 @@
 			path = Score;
 			sourceTree = "<group>";
 		};
+		CFB99395298C0D8C00E9CB72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFB99396298C0DA600E9CB72 /* PlayerScore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +340,7 @@
 				CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */,
 				CF4373832982919600927A89 /* AnyCoordinatable.swift in Sources */,
 				CFA7D16429895361001969E3 /* CoreDataSaveServise.swift in Sources */,
+				CFB99397298C0DA600E9CB72 /* PlayerScore.swift in Sources */,
 				CF43737D2982808100927A89 /* Path.swift in Sources */,
 				CFB99394298BF23D00E9CB72 /* ScoreViewModelProtocol.swift in Sources */,
 				CFA7D1742989783F001969E3 /* StringsConstants.swift in Sources */,

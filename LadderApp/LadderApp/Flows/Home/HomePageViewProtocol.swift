@@ -11,11 +11,11 @@ protocol HomePageViewProtocol {
     associatedtype ViewModel: HomePageViewModelProtocol
     var viewModel: StateObject<ViewModel> { get set }
     
-    func buildIosBody() -> AnyView
+    func buildBody() -> AnyView
 }
 
 extension HomePageViewProtocol {
-    @ViewBuilder func buildIosBody() -> AnyView {
+    @ViewBuilder func buildBody() -> AnyView {
         AnyView(ZStack {
             buildBackground()
                 .navigationTitle(viewModel.wrappedValue.navTitle)

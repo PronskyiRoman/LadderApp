@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomePageView: View, HomePageViewProtocol {
     // view Model
@@ -22,10 +23,14 @@ struct HomePageView: View, HomePageViewProtocol {
     }
     
     // MARK: Builders
+    @ViewBuilder private func buildIosBody() -> some View {
+        buildBody()
+    }
 }
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView(viewModel: .init(coordinator: Coordinator.shared))
+        HomePageView(viewModel: .init(coordinator: Coordinator.shared,
+                                      context: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)))
     }
 }

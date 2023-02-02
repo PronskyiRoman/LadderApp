@@ -21,4 +21,10 @@ protocol ScoreViewModelProtocol: ObservableObject {
     
     func imageFor(rate winRate: Int) -> Image
     func winRateForeground(rate winRate: Int) -> Color
+    
+    // players
+    var players: [PlayerScore] { get set }
+    
+    // core data
+    var coreData: CoreDataRequestsServise { get set }
 }

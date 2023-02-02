@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class ScoreViewModel: ObservableObject, ScoreViewModelProtocol {
     // UI constants
@@ -18,6 +19,18 @@ final class ScoreViewModel: ObservableObject, ScoreViewModelProtocol {
     var gamesSectionHeader: String = StringsConstants.games
     var backgroundColor: Color = ColorConstants.background
     var headerBackgroundColor: Color = ColorConstants.disabled
+    
+    // data
+    var players: [PlayerScore]
+    
+    // servises
+    var coreData: CoreDataRequestsServise
+    
+    init(context: NSManagedObjectContext) {
+        coreData = .init(context: context)
+        players = []
+        players = loadPlayers()
+    }
     
     func imageFor(rate winRate: Int) -> Image {
         var imageName = ""
@@ -44,5 +57,22 @@ final class ScoreViewModel: ObservableObject, ScoreViewModelProtocol {
         case (-100 ... -1): return ColorConstants.hugeError
         default: return ColorConstants.text
         }
+    }
+    
+    private func loadPlayers() -> [PlayerScore] {
+        [
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
+        ]
     }
 }

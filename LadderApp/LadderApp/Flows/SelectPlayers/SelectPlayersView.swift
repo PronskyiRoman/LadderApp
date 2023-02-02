@@ -31,7 +31,7 @@ struct SelectPlayersView: View, SelectPlayersViewProtocol {
 struct SelectPlayers_Previews: PreviewProvider {
     static var previews: some View {
         SelectPlayersView(viewModel: .init(coordinator: Coordinator.shared, isPresented: .constant(false),
-                                           context: NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType),
+                                           context: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType),
                                            firstPlayerName: .init(initialValue: ""),
                                            secondPlayerName: .init(initialValue: "")))
     }

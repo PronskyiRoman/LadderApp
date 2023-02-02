@@ -39,7 +39,7 @@ struct ContentView<Model>: View, ContentViewProtocol where Model: AnyCoordinatab
     }
     
     @ViewBuilder func buildIosBody() -> any View {
-        HomePageView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator))
+        HomePageView(viewModel: .init(coordinator: viewModel.wrappedValue.coordinator, context: context))
     }
 }
 
