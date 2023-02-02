@@ -129,8 +129,7 @@ final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
     
     func endGame(context: NSManagedObjectContext) {
         coreDataSave = .init(context: context)
-        coreDataSave?.saveGame(playerName1: firstPlayerNameString, player1Score: firstPlayerScore,
-                              playerName2: secondPlayerNameString, player2Score: secondPlayerScore)
+        coreDataSave?.saveGame(player: (firstPlayerNameString, firstPlayerScore), opponent: (secondPlayerNameString, secondPlayerScore))
         coordinator.popLast()
     }
     

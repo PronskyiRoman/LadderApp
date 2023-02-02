@@ -60,19 +60,6 @@ final class ScoreViewModel: ObservableObject, ScoreViewModelProtocol {
     }
     
     private func loadPlayers() -> [PlayerScore] {
-        [
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-            PlayerScore(name: "Hello \(Int.random(in: 1..<300))", gamesPlayed: .random(in: 1..<300), gamesWinned: .random(in: 1..<300)),
-        ]
+        coreData.getScoreTable()
     }
 }

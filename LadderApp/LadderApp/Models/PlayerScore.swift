@@ -14,6 +14,10 @@ struct PlayerScore: Identifiable, Hashable {
     let gamesWinned: Int
     
     var winRate: Int {
-        gamesWinned / gamesPlayed * 100
+        if gamesPlayed > 0 {
+            return Int(Double(gamesWinned) / Double(gamesPlayed) * Double(100))
+        }
+        
+        return 0
     }
 }
