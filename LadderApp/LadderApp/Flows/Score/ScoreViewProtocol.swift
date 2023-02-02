@@ -21,12 +21,16 @@ extension ScoreViewProtocol {
                 .ignoresSafeArea()
             VStack(spacing: .zero) {
                 buildHeader()
-                List(viewModel.wrappedValue.players.sorted(by: { $0.gamesPlayed > $1.gamesPlayed })) { player in
-                    buildCell(player.name, winRate: player.winRate, gamesPlayed: player.gamesPlayed)
+                if !viewModel.wrappedValue.players.isEmpty {
+                    List(viewModel.wrappedValue.players.sorted(by: { $0.gamesPlayed > $1.gamesPlayed })) { player in
+                        buildCell(player.name, winRate: player.winRate, gamesPlayed: player.gamesPlayed)
+                    }
+                    .listStyle(.grouped)
+                    .scrollContentBackground(.hidden)
+                    .background(viewModel.wrappedValue.backgroundColor)
+                } else {
+                    buildEmptyView()
                 }
-                .listStyle(.grouped)
-                .scrollContentBackground(.hidden)
-                .background(viewModel.wrappedValue.backgroundColor)
             }
             .navigationBarTitle(viewModel.wrappedValue.navigationTitle)
             .edgesIgnoringSafeArea(.bottom)
@@ -46,7 +50,6 @@ extension ScoreViewProtocol {
     }
     
     @ViewBuilder private func buildWinRateLabel(_ winRate: Int) -> some View {
-        
         HStack(spacing: .zero) {
             Text("\(winRate)").font(viewModel.wrappedValue.fontText)
             + Text("%").font(viewModel.wrappedValue.fontDescription)
@@ -71,12 +74,25 @@ extension ScoreViewProtocol {
     
     @ViewBuilder private func buildHeader() -> some View {
         HStack {
-            Text("Player")
+            Text(viewModel.wrappedValue.playerSectionHeader)
             Spacer()
-            Text("Win Rate")
-            Text("Games")
+            Text(viewModel.wrappedValue.winRateSectionHeader)
+            Text(viewModel.wrappedValue.gamesSectionHeader)
         }
         .padding()
         .frame(height: 44)
+    }
+    
+    @ViewBuilder private func buildEmptyView() -> some View {
+        VStack {
+            Spacer()
+            Text(viewModel.wrappedValue.emptyViewTitle)
+                .multilineTextAlignment(.center)
+                .font(viewModel.wrappedValue.fontText)
+                .foregroundColor(viewModel.wrappedValue.textColor)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(viewModel.wrappedValue.backgroundColor)
     }
 }

@@ -16,6 +16,7 @@ protocol ScoreViewModelProtocol: ObservableObject {
     var playerSectionHeader: String { get set }
     var winRateSectionHeader: String { get set }
     var gamesSectionHeader: String { get set }
+    var emptyViewTitle: String { get set }
     var backgroundColor: Color { get set }
     var headerBackgroundColor: Color { get set }
     

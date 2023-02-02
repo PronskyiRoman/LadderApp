@@ -17,6 +17,7 @@ final class ScoreViewModel: ObservableObject, ScoreViewModelProtocol {
     var playerSectionHeader: String = StringsConstants.player
     var winRateSectionHeader: String = StringsConstants.winRate
     var gamesSectionHeader: String = StringsConstants.games
+    var emptyViewTitle: String = StringsConstants.emptyRatingTableMessage
     var backgroundColor: Color = ColorConstants.background
     var headerBackgroundColor: Color = ColorConstants.disabled
     
