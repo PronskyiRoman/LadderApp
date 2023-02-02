@@ -14,4 +14,7 @@ struct ColorConstants {
     static let disabled: Color = .gray.opacity(0.6)
     static let textFieldBackground: Color = .gray
     static let error: Color = .red
+    static let gameButtonColor: Color = .gray.opacity(0.75)
+    static let standOff: Color = .yellow
+    static let winner: Color = .green
 }

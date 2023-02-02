@@ -38,6 +38,9 @@ protocol NewGameViewModelProtocol: ObservableObject {
     var saveTitle: String { get set }
     var backTitle: String { get set }
     var leaveTitle: String { get set }
+    var playerScoreFont: Font { get set }
+    var textFont: Font { get set }
+    var playerButtonColor: Color { get set }
     
     // combine
     var cancellable: Set<AnyCancellable> { get set }

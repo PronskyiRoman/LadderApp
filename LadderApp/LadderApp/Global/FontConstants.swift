@@ -10,4 +10,6 @@ import SwiftUI
 struct FontConstants {
     static let title: Font = .title
     static let erroe: Font = .callout
+    static let largeText: Font = .largeTitle
+    static let averageText: Font = .title2
 }

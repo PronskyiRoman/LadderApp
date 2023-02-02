@@ -30,13 +30,20 @@ final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
     @Published var secondPlayerForeground: Color = .black
     
     // UI constants
-    var endGameButtonTitle: String = StringsConstants.endGameTitile
+    var endGameButtonTitle: String = StringsConstants.endGameTitle
     var gameScoreTitile: String = StringsConstants.gameScoreTitle
     var scoreSeparatorTitle: String = StringsConstants.scoreSeparator
     var errorGameHasNotBeenSaved: String = StringsConstants.errorGameHasNotBeenSaved
     var saveTitle: String = StringsConstants.save
     var backTitle: String = StringsConstants.back
     var leaveTitle: String = StringsConstants.leave
+    var playerScoreFont: Font = FontConstants.largeText
+    var textFont: Font = FontConstants.averageText
+    var playerButtonColor: Color = ColorConstants.gameButtonColor
+    var winnerColor: Color = ColorConstants.winner
+    var looserColor: Color = ColorConstants.error
+    var standOffColor: Color = ColorConstants.standOff
+    var textColor: Color = ColorConstants.text
     
     // navigation
     var coordinator: Coordinator
@@ -110,13 +117,13 @@ final class NewGameViewModel: ObservableObject, NewGameViewModelProtocol {
     
     private func compareScores(_ score: Int, with scoreForCompare: Int) -> Color {
         if score > scoreForCompare {
-            return .green
+            return winnerColor
         } else if score < scoreForCompare {
-            return .red
+            return looserColor
         } else if score == 0 && scoreForCompare == 0 {
-            return .white
+            return textColor
         } else {
-            return .yellow
+            return standOffColor
         }
     }
     

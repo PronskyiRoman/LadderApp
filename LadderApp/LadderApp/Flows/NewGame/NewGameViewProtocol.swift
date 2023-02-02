@@ -65,10 +65,10 @@ extension NewGameViewProtocol {
             viewModel.wrappedValue.updateScore(for: name)
         } label: {
             ZStack {
-                Color.gray.opacity(0.75)
+                viewModel.wrappedValue.playerButtonColor
                     .edgesIgnoringSafeArea(isTop ? .top : .bottom)
                 Text(name)
-                    .font(.largeTitle)
+                    .font(viewModel.wrappedValue.playerScoreFont)
                     .foregroundColor(isTop ? viewModel.wrappedValue.firstPlayerForeground : viewModel.wrappedValue.secondPlayerForeground)
             }
             .frame(width: size.width, height: size.height * 0.43)
@@ -82,7 +82,7 @@ extension NewGameViewProtocol {
             Text(viewModel.wrappedValue.endGameButtonTitle)
                 .foregroundColor(ColorConstants.button)
                 .rotationEffect(.degrees(90))
-                .font(.title2)
+                .font(viewModel.wrappedValue.textFont)
                 .padding(5)
         }
     }
@@ -97,14 +97,14 @@ extension NewGameViewProtocol {
             + Text(firstLetterSP).font(.title3).foregroundColor(viewModel.wrappedValue.secondPlayerForeground)
             + Text("\(viewModel.wrappedValue.secondPlayerScore)").foregroundColor(viewModel.wrappedValue.secondPlayerForeground)
         }
-        .font(.largeTitle)
+        .font(viewModel.wrappedValue.playerScoreFont)
     }
     
     @ViewBuilder private func buildTitle() -> some View {
         Text(viewModel.wrappedValue.gameScoreTitile)
             .foregroundColor(ColorConstants.text)
             .rotationEffect(.degrees(-90))
-            .font(.title2)
+            .font(viewModel.wrappedValue.textFont)
             .padding(5)
     }
     
@@ -116,7 +116,7 @@ extension NewGameViewProtocol {
                 Image(systemName: "chevron.left")
                 Text(viewModel.wrappedValue.backTitle)
             }
-            .font(.title3)
+            .font(viewModel.wrappedValue.textFont)
         }
         .padding()
     }
