@@ -25,4 +25,9 @@ struct StringsConstants {
     static let save = "Save"
     static let leave = "leave"
     static let errorGameHasNotBeenSaved = "The game has not been saved. Do you want save the game?"
+    static let scoreNavTitle = "Score Taple"
+    static let winRate = "Win Rate"
+    static let games = "Games"
+    static let player = "Player"
+    static let emptyRatingTableMessage = "No saved completed games found on your device, try to play one and save, to be able to check statistics."
 }

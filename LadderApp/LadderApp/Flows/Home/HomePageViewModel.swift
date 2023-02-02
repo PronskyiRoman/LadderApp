@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class HomePageViewModel: HomePageViewModelProtocol {
+    // context
+    let context: NSManagedObjectContext
+    
     // constants
     var navTitle: String = StringsConstants.homeNavTitle
     var playTitle: String = StringsConstants.playNewGameButtonTitle
@@ -22,8 +26,9 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     var coordinator: Coordinator
     
     // init
-    init(coordinator: Coordinator) {
+    init(coordinator: Coordinator, context: NSManagedObjectContext) {
         self.coordinator = coordinator
+        self.context = context
     }
     
     // navigation
@@ -32,6 +37,6 @@ final class HomePageViewModel: HomePageViewModelProtocol {
     }
     
     func pushScoreTable() {
-        coordinator.push(path: .scoreTable)
+        coordinator.push(path: .scoreTable(context))
     }
 }

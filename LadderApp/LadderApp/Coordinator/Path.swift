@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 enum Path: PathType {
     case empty
     case newGame(Coordinator)
-    case scoreTable
+    case scoreTable(NSManagedObjectContext)
     
     var destination: AnyView {
         switch self {
         case .empty: return AnyView(Color.pink)
         case .newGame(let coordinator): return AnyView(NewGameView(viewModel: .init(coordinator: coordinator)))
-        case .scoreTable: return AnyView(Color.blue)
+        case .scoreTable(let context): return AnyView(ScoreView(viewModel: .init(context: context)))
         }
     }
 }

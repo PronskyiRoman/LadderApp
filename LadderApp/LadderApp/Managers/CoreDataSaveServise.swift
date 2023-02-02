@@ -9,8 +9,7 @@ import Foundation
 import CoreData
 
 protocol CoreDataSaveServiseProtocol {
-    func saveNewTeamMember(_ name: String)
-    func saveGame(playerName1: String, player1Score: Int, playerName2: String, player2Score: Int)
+    func saveGame(player: (name: String, score: Int), opponent: (name: String, score: Int))
 }
 
 final class CoreDataSaveServise: CoreDataSaveServiseProtocol {
@@ -20,53 +19,45 @@ final class CoreDataSaveServise: CoreDataSaveServiseProtocol {
         self.context = context
     }
     
-    func saveNewTeamMember(_ name: String) {
-        let player = Player(context: context)
-        player.name = name
-        player.score = nil
-        
-        try? context.save()
-    }
-    
-    func saveGame(playerName1: String, player1Score: Int, playerName2: String, player2Score: Int) {
+    func saveGame(player: (name: String, score: Int), opponent: (name: String, score: Int)) {
         let score = Score(context: context)
         let score1 = Score(context: context)
         
-        let player = Player(context: context)
-        let player1 = Player(context: context)
+        let gamer1 = Player(context: context)
+        let gamer2 = Player(context: context)
         
         let game = Game(context: context)
         
-        player.name = playerName1
-        player.score = score
-        player.game = game
+        gamer1.name = player.name
+        gamer1.score = score
+        gamer1.game = game
         
-        player1.name = playerName2
-        player1.score = score1
-        player1.game = game
+        gamer2.name = opponent.name
+        gamer2.score = score1
+        gamer2.game = game
         
-        score.score = Int16(player1Score)
-        score.player = player
+        score.score = Int16(player.score)
+        score.player = gamer1
         
-        score1.score = Int16(player2Score)
-        score1.player = player1
+        score1.score = Int16(opponent.score)
+        score1.player = gamer2
         
         game.id = UUID()
         game.date = Date()
-        game.players = [player, player1]
+        game.players = [gamer1, gamer2]
         
-        if player1Score > player2Score {
-            player.winner = player
-        } else if player2Score > player1Score {
-            player1.winner = player1
+        if player.score > opponent.score {
+            gamer1.winner = gamer1
+        } else if opponent.score > player.score {
+            gamer2.winner = gamer2
         } else {
             let friend = Player(context: context)
             friend.name = "Friendship"
-            player.winner = friend
+            gamer1.winner = friend
             
             let friend1 = Player(context: context)
             friend1.name = "Friendship"
-            player1.winner = friend1
+            gamer2.winner = friend1
         }
         
         try? context.save()

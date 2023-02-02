@@ -11,11 +11,11 @@ protocol SelectPlayersViewProtocol {
     associatedtype ViewModel: SelectPlayersViewModelProtocol
     var viewModel: StateObject<ViewModel> { get set }
     
-    func buildIosBody() -> AnyView
+    func buildBody() -> AnyView
 }
 
 extension SelectPlayersViewProtocol {
-    @ViewBuilder func buildIosBody() -> AnyView {
+    @ViewBuilder func buildBody() -> AnyView {
         AnyView(whoWillPlayView())
     }
     

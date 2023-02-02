@@ -11,10 +11,8 @@ import CoreData
 protocol CoreDataRequestsServiseProtocol {
     // all members
     func allMembers() -> [String]
-    // teamMember played games
-    func gamesPalayedBy(team teamMembers: [String]) -> [Game]
-    // get score for player
-    func getScoreFor(_ player: String) -> Float
+    // get score table
+    func getScoreTable() -> [PlayerScore]
 }
 
 final class CoreDataRequestsServise: CoreDataRequestsServiseProtocol {
@@ -28,30 +26,38 @@ final class CoreDataRequestsServise: CoreDataRequestsServiseProtocol {
         let request = NSFetchRequest<Player>.init(entityName: "Player")
 
         let players = try? context.fetch(request)
-        return Array(Set(players?.compactMap({ $0.name }) ?? []))
+        var set = Array(Set(players?.compactMap({ $0.name }) ?? []))
+        set.removeAll(where: { $0 == "Friendship" })
+        return set
     }
     
-    func gamesPalayedBy(team teamMembers: [String]) -> [Game] {
-        let request = NSFetchRequest<Game>()
-        let predicate = teamMembers.map({ NSPredicate(format: "players CONTAIN[c] &@", $0) })
-        request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicate)
-        return (try? context.fetch(request)) ?? []
-    }
-    
-    func getScoreFor(_ player: String) -> Float {
-        let request = NSFetchRequest<Game>()
-        let allGames = NSPredicate(format: "players CONTAIN[c] &@", player)
-        let winnedByPlayer = NSPredicate(format: "players.winner.name CONTAIN[c] &@", player)
+    private func getScoreFor(_ player: String) -> PlayerScore {
+        let request = NSFetchRequest<Game>.init(entityName: "Game")
+        let games = (try? context.fetch(request)) ?? []
         
-        request.predicate = allGames
-        let gamesPlayedByPlayer = (try? context.fetch(request)) ?? []
+        var gamesPlayedByPlayer = 0
+        games.forEach({ game in
+            guard let players = game.players as? Set<Player> else { return }
+            guard players.contains(where: { $0.name == player }) else { return }
+            gamesPlayedByPlayer += 1
+        })
         
-        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [allGames, winnedByPlayer])
-        let gamesWinnedByPlayer = (try? context.fetch(request)) ?? []
-        
-        let winRate: Float = Float(gamesWinnedByPlayer.count / gamesPlayedByPlayer.count) * Float(100)
+        var gamesWinnedByPlayer = 0
+        games.forEach({ game in
+            guard let players = game.players as? Set<Player> else { return }
+            guard players.contains(where: { $0.winner?.name == player }) else { return }
+            gamesWinnedByPlayer += 1
+        })
 
-        return winRate
+        return PlayerScore(name: player, gamesPlayed: gamesPlayedByPlayer, gamesWinned: gamesWinnedByPlayer)
+    }
+    
+    func getScoreTable() -> [PlayerScore] {
+        let allMembers = allMembers()
+        var scoreTable: [PlayerScore] = []
+        allMembers.forEach({ scoreTable.append(getScoreFor($0)) })
+        
+        return scoreTable
     }
 }
 
