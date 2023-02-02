@@ -33,6 +33,8 @@
 		CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */; };
 		CFA7D18129897B65001969E3 /* NewGameViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */; };
 		CFAD6108298C5240009A5B64 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */; };
+		CFAD610B298C587D009A5B64 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD610A298C587D009A5B64 /* UserDefaultsStorage.swift */; };
+		CFAD610D298C589B009A5B64 /* UserDefaultsStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD610C298C589B009A5B64 /* UserDefaultsStorageKey.swift */; };
 		CFB99385298BA42000E9CB72 /* SelectPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */; };
 		CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */; };
 		CFB99389298BA45700E9CB72 /* SelectPlayersViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */; };
@@ -74,6 +76,8 @@
 		CFA7D17E29897B56001969E3 /* NewGameViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewProtocol.swift; sourceTree = "<group>"; };
 		CFA7D18029897B65001969E3 /* NewGameViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewModelProtocol.swift; sourceTree = "<group>"; };
 		CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CFAD610A298C587D009A5B64 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		CFAD610C298C589B009A5B64 /* UserDefaultsStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageKey.swift; sourceTree = "<group>"; };
 		CFB99384298BA42000E9CB72 /* SelectPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersView.swift; sourceTree = "<group>"; };
 		CFB99386298BA44600E9CB72 /* SelectPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewModel.swift; sourceTree = "<group>"; };
 		CFB99388298BA45700E9CB72 /* SelectPlayersViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewProtocol.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				CF4373792982805000927A89 /* Coordinator */,
 				CF676305297EC2F30024F03A /* Managers */,
 				CF67630B297EC2F30024F03A /* CoreData */,
+				CFAD6109298C5865009A5B64 /* Storage */,
 				CF6762F5297EB2790024F03A /* Preview Content */,
 			);
 			path = LadderApp;
@@ -228,6 +233,15 @@
 				CFAD6107298C5240009A5B64 /* Launch Screen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CFAD6109298C5865009A5B64 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD610A298C587D009A5B64 /* UserDefaultsStorage.swift */,
+				CFAD610C298C589B009A5B64 /* UserDefaultsStorageKey.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		CFB99383298BA3F800E9CB72 /* SelectPlayers */ = {
@@ -331,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAD610D298C589B009A5B64 /* UserDefaultsStorageKey.swift in Sources */,
 				CFA7D17829897A1E001969E3 /* FontConstants.swift in Sources */,
 				CFB99387298BA44600E9CB72 /* SelectPlayersViewModel.swift in Sources */,
 				CFA7D17F29897B56001969E3 /* NewGameViewProtocol.swift in Sources */,
@@ -345,6 +360,7 @@
 				CF67630F297EC2F30024F03A /* ContentView.swift in Sources */,
 				CFA7D16D298970EB001969E3 /* HomePageViewProtocol.swift in Sources */,
 				CFA7D18129897B65001969E3 /* NewGameViewModelProtocol.swift in Sources */,
+				CFAD610B298C587D009A5B64 /* UserDefaultsStorage.swift in Sources */,
 				CFA7D17B29897B40001969E3 /* NewGameView.swift in Sources */,
 				CF43737B2982807400927A89 /* Coordinator.swift in Sources */,
 				CF6762EF297EB2740024F03A /* LadderAppApp.swift in Sources */,
