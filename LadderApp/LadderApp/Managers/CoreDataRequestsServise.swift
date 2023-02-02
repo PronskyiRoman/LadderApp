@@ -28,7 +28,7 @@ final class CoreDataRequestsServise: CoreDataRequestsServiseProtocol {
         let request = NSFetchRequest<Player>.init(entityName: "Player")
 
         let players = try? context.fetch(request)
-        return players?.compactMap({ $0.name }) ?? []
+        return Array(Set(players?.compactMap({ $0.name }) ?? []))
     }
     
     func gamesPalayedBy(team teamMembers: [String]) -> [Game] {
